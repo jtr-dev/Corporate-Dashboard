@@ -67,7 +67,6 @@ Provides fast, reliable and extensible starter for the development of Angular 2 
 - [Environment Configuration](#environment-configuration)
 - [Tools documentation](#tools-documentation)
 - [Project Milestones And Udacity Rubrick](#project-milestones-and-udacity-rubrick)
-- [How to extend?](#how-to-extend)
 - [Running tests](#running-tests)
 - [Advanced Seed Option](#advanced-seed-option)
 
