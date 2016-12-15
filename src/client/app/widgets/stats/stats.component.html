@@ -1,0 +1,16 @@
+<a *ngFor="let stat of statsList" class="stat card hvr-wobble-horizontal"  >
+	<div class=" stat-icon">
+		<i class="fa fa-{{stat.icon}} fa-4x text-{{stat.bgclass}}"></i>
+	</div>
+	<div class=" stat-label">
+		<div class="label-header">
+			{{stat.value}}
+		</div>
+		<progress class="progress progress-{{stat.bgclass}}" max="100" value="{{stat.progressValue}}">{{stat.progressValue}}%</progress>
+		<div class="clearfix stat-detail">
+			<div class="label-body">
+				<i class="fa fa-arrow-circle-o-right pull-right text-muted"></i> {{ stat.text }}
+			</div>
+		</div>
+	</div>
+</a>

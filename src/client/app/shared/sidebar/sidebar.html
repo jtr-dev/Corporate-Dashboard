@@ -1,0 +1,54 @@
+<aside id="sidebar">
+    <div class="sidenav-outer">
+        <div class="side-menu">
+            <div class="menu-body">
+                <ul class="nav nav-pills nav-stacked sidenav">
+                    <li>
+                        <a [routerLink]="['home']">
+                            <i class="fa fa-home"></i>
+                        </a>
+                        <ul class="nested-dropdown animated">
+                            <li><a [routerLink]="['home']">Dashboard</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a [routerLink]="['tables']">
+                            <i class="fa fa-list"></i>
+                        </a>
+                        <ul class="nested-dropdown animated">
+                            <li><a [routerLink]="['tables']">Issues</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a [routerLink]="['mail', 'inbox']">
+                            <i class="fa fa-envelope-o"></i>
+                        </a>
+                        <ul class="nested-dropdown animated">
+                            <li class="sidemenu-header">Mail</li>
+                            <li><a [routerLink]="['mail', 'inbox']">Inbox</a></li>
+                            <li><a [routerLink]="['mail', 'compose']">Compose</a></li>
+                        </ul>
+                    </li>
+                    <li> 
+                        <a [routerLink]="['invoice']">
+                            <i class="fa fa-list-alt"></i>
+                        </a>
+                        <ul class="nested-dropdown animated">
+                            <li><a [routerLink]="['invoice']">Invoice</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="side-widgets">
+            <div class="widgets-content">
+                <div class="profile text-center"> 
+                    <a ui-sref="profile"><img src="assets/images/flat-avatar.png" style="max-width: 165px" class="user-avatar avatar" /></a>
+                </div>
+                <div class="calendar-container text-center">
+                    <div id="calendar1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
