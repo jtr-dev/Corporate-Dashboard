@@ -15,16 +15,11 @@
 									<th>Comment</th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody *ngFor="let t of tableList">
 								<tr>
-									<td>Flight-Tracker</td>
-									<td>Not returning proper Value for C1-30</td>
-									<td>The value for the ...</td>
-								</tr>
-								<tr>
-									<td>Flight-Tracker</td>
-									<td>Not returning proper Value for C1-30</td>
-									<td>The value for the ...</td>
+									<td class="span 3">{{t.repo}}</td>
+									<td class="span 3">{{t.issue}}</td>
+									<td class="span 6">{{t.comment}}</td>
 								</tr>
 							</tbody>
 						</table>
