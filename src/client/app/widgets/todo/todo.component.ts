@@ -15,7 +15,7 @@ export class TodoComponent implements OnInit {
 		'Henna birthday at Mezbaan.'
 	];
 	addName(): boolean {
-		if (this.newName == '') return false;
+		if (this.newName === '') return false;
 		this.nameList.unshift(this.newName);
 		this.newName = '';
 		return true;
