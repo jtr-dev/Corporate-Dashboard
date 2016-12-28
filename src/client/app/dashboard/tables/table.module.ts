@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
-import {CommonModule} from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { TableComponent } from './table.component';
-import {DataTableModule} from 'angular2-datatable';
-import { FormsModule } from '@angular/forms';
+import { DataTableModule } from 'angular2-datatable';
 
 
 @NgModule({
-    imports: [CommonModule, DataTableModule,FormsModule],
+    imports: [CommonModule, DataTableModule],
     declarations: [TableComponent],
     exports: [TableComponent]
 })
