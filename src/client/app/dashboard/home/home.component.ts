@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
 	ngOnInit() {
 		var vmap: any = $('#vmap');
 		vmap.vectorMap({
-			map: 'usa_en',
+			map: 'world_en',
 			backgroundColor: '#FFF',
 			borderColor: '#D9D9D9',
 			borderOpacity: 0.25,
@@ -23,28 +23,48 @@ export class HomeComponent implements OnInit {
 			color: '#CCCCCC',
 			enableZoom: true,
 			hoverColor: '#63B4E6',
+			colors: {
+				fr: '#63B4E6',
+				us: '#63B4E6',
+				de: '#63B4E6'
+			},
 			hoverOpacity: null,
 			normalizeFunction: 'linear',
 			scaleColors: ['#b6d6ff', '#005ace'],
 			selectedColor: '#63B4E6',
 			selectedRegions: [],
 			showTooltip: true,
-			pins: {'fl': "<span>4</span>",'or': "<span>4</span>"}
-			pinMode: 'content'
-			onRegionClick: function(element: any, code: any, region: any) {
+			onRegionClick: function (element: any, code: any, region: any) {
 				var message = 'You clicked "'
-				+ region
-				+ '" which has the code: '
-				+ code;
+					+ region
+					+ '" which has the code: '
+					+ code;
 				console.log(message);
-			}
+			},
+			onLabelShow: function (event: any, label: any, code: any) {
+				if (code === 'fr') {
+					label.html(
+						'<div class="map-tooltip"><h3 class="header">France</h3><p class="description">Employees: 26 <br/> Customers: 13048 </p></div>'
+					);
+				} else if (code === 'us') {
+					label.html(
+						'<div class="map-tooltip"><h3 class="header">United States</h3><p class="description">Employees: 18 <br/> Customers: 28165 </p></div>'
+					);
+				} else if (code === 'de') {
+					// HTML Based Labels. You can use any HTML you want, this is just an example
+					label.html(
+						'<div class="map-tooltip"><h3 class="header">Sweden</h3><p class="description">Employees: 7 <br/> Customers: 3569 </p></div>'
+					);
+				}
+			},
 		});
+
 		c3.generate({
 			bindto: '#lineChart',
 			data: {
 				columns: [
-				['Customers', 12, 13, 11, 31, 15, 21],
-				["Hourly Revenue", 200, 250.34, 400.40, 532.31, 732.21, 824.21 ]
+					['Customers', 12, 13, 11, 31, 15, 21],
+					['Hourly Revenue', 200, 250.34, 400.40, 532.31, 732.21, 824.21],
 				],
 				axes: {
 					Customers: 'y2'
@@ -52,24 +72,24 @@ export class HomeComponent implements OnInit {
 				types: {
 					Customers: 'bar'
 				}
-		    },
+			},
 			color: {
 				pattern: ['#3CA2E0', '#5CB85C', '#F1B35B']
 			},
 			axis: {
 				y: {
 					label: {
-						text: 'Revenue'
+						text: 'Revenue',
 						position: 'outer-middle'
 					},
 					tick: {
-						format: d3.format("$,")
+						format: d3.format('$,')
 					}
 				},
-				y2:  {
-					show: true
+				y2: {
+					show: true,
 					label: {
-						text: "Customers",
+						text: 'Customers',
 						position: 'outer-middle'
 					}
 				}
@@ -80,34 +100,34 @@ export class HomeComponent implements OnInit {
 			bindto: '#cbar',
 			data: {
 				columns: [
-				['Open Issues', 2, 3, 1, 3, 5, 2],
-				['Closed Issues', 3, 5, 7, 7, 8, 10]
+					['Open Issues', 2, 3, 1, 3, 5, 2],
+					['Closed Issues', 3, 5, 7, 7, 8, 10]
 				],
 				type: 'bar'
 			},
 			bar: {
 				width: {
-          			ratio: 0.5 // this makes bar width 50% of length between ticks
-          		}
-          	},
-          	color: {
-          		pattern: ['#de6764', '#5CB85C']
-          	},
-          	legend: {
-          		show: false
-          	},
-          	axis: {
-          		x: {
-          			show: false
-          		},
-          		y:  {
-					show: true
+					ratio: 0.5 // this makes bar width 50% of length between ticks
+				}
+			},
+			color: {
+				pattern: ['#de6764', '#5CB85C']
+			},
+			legend: {
+				show: false
+			},
+			axis: {
+				x: {
+					show: false
+				},
+				y: {
+					show: true,
 					label: {
-						text: "Issues",
+						text: 'Issues',
 						position: 'outer-middle'
 					}
 				}
-          	}
-        });
+			}
+		});
 	}
 }

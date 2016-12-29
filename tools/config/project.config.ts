@@ -43,7 +43,7 @@ export class ProjectConfig extends SeedConfig {
       ...this.APP_ASSETS,
       { src: `${this.ASSETS_SRC}/extra/jqvmap/jqvmap.css`, inject: true, vendor: false},
       { src: `${this.ASSETS_SRC}/extra/jqvmap/jquery.vmap.js`, inject: true, vendor: false },
-      { src: `${this.ASSETS_SRC}/extra/jqvmap/maps/jquery.vmap.usa.js`, inject: true, vendor: false },
+      { src: `${this.ASSETS_SRC}/extra/jqvmap/maps/jquery.vmap.world.js`, inject: true, vendor: false },
       { src: `${this.ASSETS_SRC}/extra/progressButton/classie.js`, inject: true, vendor: false},
       { src: `${this.ASSETS_SRC}/extra/progressButton/modernizr.custom.js`, inject: true, vendor: false},
       { src: `${this.ASSETS_SRC}/extra/progressButton/progressButton.js`, inject: true, vendor: false},
