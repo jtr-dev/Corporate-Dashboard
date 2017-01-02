@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
 	public mapEmployees: any;
 	public openIssues: any;
 	public closedIssues: any;
-
+	public clasd: number;
 	constructor(private http: Http) {
 	}
 
@@ -36,12 +36,12 @@ export class HomeComponent implements OnInit {
 					this.mapEmployees = this.data[0].demographic.employees;
 					this.openIssues = this.data[0].repo.openIssues;
 					this.closedIssues = this.data[0].repo.closedIssues;
-					console.log(this.mapCustomers.us, this.mapCustomers.fr, this.mapCustomers.de);
-					this.Init();
+					this.Init(this.mapCustomers.us, this.mapCustomers.fr, this.mapCustomers.se,
+						      this.mapEmployees.us, this.mapEmployees.fr, this.mapEmployees.se);
 				}, 2000);
 			});
 	}
-	Init(): void {
+	Init(C_us: number, C_fr: number, C_se: number, E_us: number, E_fr: number, E_se: number): void {
 		var vmap: any = $('#vmap');
 		vmap.vectorMap({
 			map: 'world_en',
@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit {
 			colors: {
 				fr: '#63B4E6',
 				us: '#63B4E6',
-				de: '#63B4E6'
+				se: '#63B4E6'
 			},
 			hoverOpacity: null,
 			normalizeFunction: 'linear',
@@ -74,18 +74,18 @@ export class HomeComponent implements OnInit {
 				if (code === 'fr') {
 					label.html(
 						'<div class="map-tooltip"><h3 class="header">France</h3><p class="description">Employees: '
-						+this.mapEmployees.fr+' <br/> Customers: '+this.mapCustomers.fr+' </p></div>'
+						+ E_fr + ' <br/> Customers: ' + C_fr + ' </p></div>'
 					);
 				} else if (code === 'us') {
 					label.html(
 						'<div class="map-tooltip"><h3 class="header">United States</h3><p class="description">Employees: '
-						+this.mapEmployees.us+' <br/> Customers: '+this.mapCustomers.us+' </p></div>'
+						+ E_us + ' <br/> Customers: ' + C_us + ' </p></div>'
 					);
-				} else if (code === 'de') {
+				} else if (code === 'se') {
 					// HTML Based Labels. You can use any HTML you want, this is just an example
 					label.html(
 						'<div class="map-tooltip"><h3 class="header">Sweden</h3><p class="description">Employees: '
-						+this.mapEmployees.de+' <br/> Customers: '+this.mapCustomers.de+' </p></div>'
+						+ E_se + ' <br/> Customers: ' + C_se + ' </p></div>'
 					);
 				}
 			},

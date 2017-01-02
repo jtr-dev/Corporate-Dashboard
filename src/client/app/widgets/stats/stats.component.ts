@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
 	moduleId: module.id,
@@ -15,20 +15,20 @@ export class StatsComponent {
 
 
 	statsList: any = [
-	{
+		{
 			icon: 'cloud-upload',
 			value: '98%',
 			text: 'Server Uptime',
 			bgclass: 'success',
 			link: 'c3chart',
 			progressValue: '98'
-	},{
+		}, {
 			icon: 'heartbeat',
 			value: '84%',
 			text: 'Build Success Rate',
 			bgclass: 'info',
 			link: 'c3chart',
 			progressValue: '84'
-	}
+		}
 	];
 }
