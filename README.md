@@ -103,6 +103,8 @@ Currently the `ENV_NAME`s are `dev`, `prod`, `staging`, but you can simply add a
 
 A documentation of the provided tools can be found in [tools/README.md](tools/README.md).
 
+API and json files are built with node.js and [can be found here](https://github.com/teachtyler/dashboardapi)
+
 
 ## Project Milestones And Udacity Rubrick
  - [ ] App includes all requirements, including header, menu, and all dashboard views.
