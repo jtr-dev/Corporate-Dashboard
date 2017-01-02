@@ -1,66 +1,33 @@
-<!--<div class="conter-wrapper animate">
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="card">
-				<div class="card-header card-info card-inverse">
-					<span class="card-title">Issues</span>
-				</div>
-				<div class="card-block">
-					<div class="table-responsive">
-						<table class="table table-striped table-hover">
-							<thead>
-								<tr>
-									<th>Repo</th>
-									<th>Issue Title</th>
-									<th>Comment</th>
-								</tr>
-							</thead>
-							<tbody *ngFor="let t of tableList">
-								<tr>
-									<td class="span 3">{{t.repo}}</td>
-									<td class="span 3">{{t.issue}}</td>
-									<td class="span 6">{{t.comment}}</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>-->
-
-
-<table class="table table-striped" [mfData]="tableList" #mf="mfDataTable" [mfRowsOnPage]="5">
-    <thead>
-    <tr>
-        <th style="width: 20%">
-            <mfDefaultSorter by="repo">Repo</mfDefaultSorter>
-        </th>
-        <th style="width: 20%">
-            <mfDefaultSorter by="issue">Issue Title</mfDefaultSorter>
-        </th>
-        <th style="width: 50%">
-            <mfDefaultSorter by="comment">Comment</mfDefaultSorter>
-        </th>
-        <th style="width: 10%">
-            <mfDefaultSorter by="opened">Opened</mfDefaultSorter>
-        </th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let item of mf.data">
-        <td>{{item.repo}}</td>
-        <td>{{item.issue}}</td>
-        <td class="text-right">{{item.comment}}</td>
-        <td>{{item.opened | uppercase}}</td>
-    </tr>
-    </tbody>
-    <tfoot>
-    <tr>
-        <td colspan="4">
-            <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
-        </td>
-    </tr>
-    </tfoot>
+<table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
+	<thead>
+		<tr>
+			<th style="width: 20%">
+				<mfDefaultSorter by="repo">Repo</mfDefaultSorter>
+			</th>
+			<th style="width: 20%">
+				<mfDefaultSorter by="issue">Issue Title</mfDefaultSorter>
+			</th>
+			<th style="width: 50%">
+				<mfDefaultSorter by="comment">Comment</mfDefaultSorter>
+			</th>
+			<th style="width: 10%">
+				<mfDefaultSorter by="opened">Opened</mfDefaultSorter>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let item of mf.data">
+			<td>{{item.repo}}</td>
+			<td>{{item.issue}}</td>
+			<td class="text-right">{{item.comment}}</td>
+			<td>{{item.opened | uppercase}}</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="4">
+				<mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+			</td>
+		</tr>
+	</tfoot>
 </table>

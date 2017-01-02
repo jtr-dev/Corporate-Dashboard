@@ -1,5 +1,6 @@
 /// <reference path="../../../../../node_modules/@types/c3/index.d.ts" />
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
 
 /**
 *	This class represents the lazy loaded HomeComponent.
@@ -12,7 +13,35 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HomeComponent implements OnInit {
-	ngOnInit() {
+	public data: any[];
+	public Customers: any[];
+	public Revenue: any[];
+	public mapCustomers: any;
+	public mapEmployees: any;
+	public openIssues: any;
+	public closedIssues: any;
+
+	constructor(private http: Http) {
+	}
+
+	ngOnInit(): void {
+		this.http.get('https://corporatedashapi.azurewebsites.net/revenue')
+			.subscribe((data) => {
+				setTimeout(() => {
+					this.data = data.json();
+					console.log(this.data);
+					this.Customers = this.data[0].hourlyCustomers;
+					this.Revenue = this.data[0].hourlyRevenue;
+					this.mapCustomers = this.data[0].demographic.customers;
+					this.mapEmployees = this.data[0].demographic.employees;
+					this.openIssues = this.data[0].repo.openIssues;
+					this.closedIssues = this.data[0].repo.closedIssues;
+					console.log(this.mapCustomers.us, this.mapCustomers.fr, this.mapCustomers.de);
+					this.Init();
+				}, 2000);
+			});
+	}
+	Init(): void {
 		var vmap: any = $('#vmap');
 		vmap.vectorMap({
 			map: 'world_en',
@@ -44,16 +73,19 @@ export class HomeComponent implements OnInit {
 			onLabelShow: function (event: any, label: any, code: any) {
 				if (code === 'fr') {
 					label.html(
-						'<div class="map-tooltip"><h3 class="header">France</h3><p class="description">Employees: 26 <br/> Customers: 13048 </p></div>'
+						'<div class="map-tooltip"><h3 class="header">France</h3><p class="description">Employees: '
+						+this.mapEmployees.fr+' <br/> Customers: '+this.mapCustomers.fr+' </p></div>'
 					);
 				} else if (code === 'us') {
 					label.html(
-						'<div class="map-tooltip"><h3 class="header">United States</h3><p class="description">Employees: 18 <br/> Customers: 28165 </p></div>'
+						'<div class="map-tooltip"><h3 class="header">United States</h3><p class="description">Employees: '
+						+this.mapEmployees.us+' <br/> Customers: '+this.mapCustomers.us+' </p></div>'
 					);
 				} else if (code === 'de') {
 					// HTML Based Labels. You can use any HTML you want, this is just an example
 					label.html(
-						'<div class="map-tooltip"><h3 class="header">Sweden</h3><p class="description">Employees: 7 <br/> Customers: 3569 </p></div>'
+						'<div class="map-tooltip"><h3 class="header">Sweden</h3><p class="description">Employees: '
+						+this.mapEmployees.de+' <br/> Customers: '+this.mapCustomers.de+' </p></div>'
 					);
 				}
 			},
@@ -63,8 +95,8 @@ export class HomeComponent implements OnInit {
 			bindto: '#lineChart',
 			data: {
 				columns: [
-					['Customers', 12, 13, 11, 31, 15, 21],
-					['Hourly Revenue', 200, 250.34, 400.40, 532.31, 732.21, 824.21],
+					['Customers', ...this.Customers],
+					['Hourly Revenue', ...this.Revenue],
 				],
 				axes: {
 					Customers: 'y2'
@@ -100,8 +132,8 @@ export class HomeComponent implements OnInit {
 			bindto: '#cbar',
 			data: {
 				columns: [
-					['Open Issues', 2, 3, 1, 3, 5, 2],
-					['Closed Issues', 3, 5, 7, 7, 8, 10]
+					['Open Issues', ...this.openIssues],
+					['Closed Issues', ...this.closedIssues]
 				],
 				type: 'bar'
 			},
