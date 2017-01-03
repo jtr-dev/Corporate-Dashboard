@@ -30,7 +30,7 @@
     "webdriver-start": "webdriver-manager start",
     "webdriver-update": "webdriver-manager update"
   },
-  "author": "Tyler Roberts, Nitin Kumar Mishra(angular2-seed)",
+  "author": "Tyler Roberts",
   "license": "MIT",
   "devDependencies": {
     "@angular/compiler-cli": "0.6.1",
@@ -57,6 +57,7 @@
     "@types/yargs": "0.0.30",
     "@types/zone.js": "0.0.26",
     "@types/c3": "0.0.34",
+    "@types/d3": "4.4.0",    
     "async": "2.0.1",
     "autoprefixer": "6.3.7",
     "browser-sync": "2.13.0",

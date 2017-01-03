@@ -1,4 +1,7 @@
 /// <reference path="../../../../../node_modules/@types/c3/index.d.ts" />
+/// <reference path="../../../../../node_modules/@types/d3/index.d.ts" />
+import * as d3 from 'd3';
+
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 
