@@ -111,6 +111,14 @@ API and json files are built with node.js and [can be found here](https://github
    - [x] A geospatial view, identifying the number of employees at various company locations.
    - [x] A “key metrics” view, containing components displaying: the number of open issues, a line chart reflecting number of paying  customers over a period of time, and a bar chart reflecting number of reported issues over a period of time.
    - [x] A “data view” of all issues, with an appearance similar to a spreadsheet, that is sortable and filterable.
+         - [ ] An issue should contain the following fields:
+  		- submission timestamp
+  		- customer name
+  		- customer email address
+  		- description
+  		- open/closed status
+  		- closed timestamp
+  		- employee name
  - [x] Responsiveness - App is equally functional on mobile and desktop, using responsive design to ensure its displayed in a useable state.
  - [x] Component Design: Application makes use of a Front-End Framework (e.g. Backbone, Angular, Ember, et cetera) and properly separates data from the user interface.
  - [x] Data Formats: Each dashboard uses external data files (data not stored directly within the application). At least one file must be a comma-separated value (.csv) and at least one must be .json.
