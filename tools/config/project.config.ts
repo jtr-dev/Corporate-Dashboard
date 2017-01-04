@@ -28,12 +28,9 @@ export class ProjectConfig extends SeedConfig {
       { src: 'moment/moment.js', inject: 'libs' },
       { src: 'fullcalendar/dist/fullcalendar.css', inject: true },
       { src: 'fullcalendar/dist/fullcalendar.min.js', inject: 'libs' },
-      { src: 'c3/c3.css', inject: true },
-      { src: 'd3/d3.js', inject: 'libs' },
-      { src: 'c3/c3.js', inject: 'libs' },
       { src: 'perfect-scrollbar/dist/css/perfect-scrollbar.css', inject: true },
       { src: 'perfect-scrollbar/dist/js/perfect-scrollbar.jquery.js', inject: 'libs' },
-      { src: 'chart.js/Chart.js', inject: 'libs' }
+      { src: 'chart.js/Chart.js', inject: 'libs' },
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
       // {src: 'lodash/lodash.min.js', inject: 'libs'},
     ];
@@ -44,6 +41,9 @@ export class ProjectConfig extends SeedConfig {
       { src: `${this.ASSETS_SRC}/extra/jqvmap/jqvmap.css`, inject: true, vendor: false},
       { src: `${this.ASSETS_SRC}/extra/jqvmap/jquery.vmap.js`, inject: true, vendor: false },
       { src: `${this.ASSETS_SRC}/extra/jqvmap/maps/jquery.vmap.world.js`, inject: true, vendor: false },
+      { src: `${this.ASSETS_SRC}/extra/c3/c3.min.css`, inject: true, vendor: false },
+      { src: `${this.ASSETS_SRC}/extra/c3/c3.min.js`, inject: true, vendor: false },
+      { src: `${this.ASSETS_SRC}/extra/d3/d3.js`, inject: true, vendor: false },
       { src: `${this.ASSETS_SRC}/extra/progressButton/classie.js`, inject: true, vendor: false},
       { src: `${this.ASSETS_SRC}/extra/progressButton/modernizr.custom.js`, inject: true, vendor: false},
       { src: `${this.ASSETS_SRC}/extra/progressButton/progressButton.js`, inject: true, vendor: false},

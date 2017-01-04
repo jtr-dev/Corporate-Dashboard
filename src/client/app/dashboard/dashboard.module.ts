@@ -5,8 +5,6 @@ import { RouterModule } from '@angular/router';
 import { HomeModule } from './home/home.module';
 import { TableModule } from './tables/table.module';
 import { FormModule } from './forms/forms.module';
-import { ChartModule } from './charts/charts.module';
-import { MailModule } from './mail/mail.module';
 import { InvoiceModule } from './invoice/invoice.module';
 import { ProfileModule } from './profile/profile.module';
 
@@ -22,8 +20,6 @@ import { DashboardComponent } from './dashboard.component';
     	HomeModule,
     	TableModule,
     	FormModule,
-    	ChartModule,
-    	MailModule,
     	InvoiceModule,
     	ProfileModule,
     	TopNavModule,

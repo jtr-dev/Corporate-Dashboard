@@ -1,7 +1,4 @@
 /// <reference path="../../../../../node_modules/@types/c3/index.d.ts" />
-/// <reference path="../../../../../node_modules/@types/d3/index.d.ts" />
-import * as d3 from 'd3';
-
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 
@@ -23,7 +20,7 @@ export class HomeComponent implements OnInit {
 	public mapEmployees: any;
 	public openIssues: any;
 	public closedIssues: any;
-	public clasd: number;
+
 	constructor(private http: Http) {
 	}
 
@@ -117,9 +114,6 @@ export class HomeComponent implements OnInit {
 						text: 'Revenue',
 						position: 'outer-middle'
 					},
-					tick: {
-						format: d3.format('$,')
-					}
 				},
 				y2: {
 					show: true,
