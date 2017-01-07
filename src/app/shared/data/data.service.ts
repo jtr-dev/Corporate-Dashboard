@@ -22,7 +22,7 @@ export class DataService {
     * Returns an Observable for the HTTP GET request for the JSON resource.
     * @return {string[]} The Observable for the HTTP request.
     */
-    get(): Observable<string[]> {
+    getIssuesList(): Observable<string[]> {
         return this.http.get('https://corporatedashapi.azurewebsites.net/issues')
         .map((res: Response) => res.json())
         //              .do(data => console.log('server data:', data))  // debug
