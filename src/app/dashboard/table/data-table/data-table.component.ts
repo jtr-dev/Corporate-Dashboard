@@ -23,7 +23,7 @@ export class DataTableComponent implements OnInit {
             Description: {
                 title: 'Description'
             },
-            Employee: {
+            'Employee ': {
                 title: 'Employee'
             },
             'Open/Closed Status': {
@@ -41,19 +41,18 @@ export class DataTableComponent implements OnInit {
         this.source = new LocalDataSource();
     }
 
-    // call the getnames function to fetch data from json 
+    // call the function to fetch data from api 
     ngOnInit() {
-        this.getNames();
+        setInterval( () => {
+            this.getTable();
+        },1500);
     }
 
-    // used to fetch all the data from json file
-
-    getNames() {
-        this.dataService.get()
+    getTable() {
+        this.dataService.getIssuesList()
             .subscribe(
             names => {
                 this.source.load(names);
-                console.log(names);
             },
             error => this.errorMessage = <any>error
             );
