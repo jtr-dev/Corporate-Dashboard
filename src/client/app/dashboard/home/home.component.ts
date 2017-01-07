@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
 	public mapEmployees: any;
 	public openIssues: any;
 	public closedIssues: any;
-	public clasd: number;
+
 	constructor(private http: Http) {
 	}
 
@@ -116,9 +116,6 @@ export class HomeComponent implements OnInit {
 						text: 'Revenue',
 						position: 'outer-middle'
 					},
-					tick: {
-						format: d3.format('$,')
-					}
 				},
 				y2: {
 					show: true,
