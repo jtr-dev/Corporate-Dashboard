@@ -1,0 +1,78 @@
+{
+  "project": {
+    "version": "1.0.0-beta.21",
+    "name": "ani-theme-cli"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.json",
+      "prefix": "app",
+      "mobile": false,
+      "styles": [
+        "scripts/jqvmap/jqvmap.css",
+        "scripts/jb-editor/editor.css",
+        "../node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.css",
+        "../node_modules/c3/c3.css",
+        "../node_modules/font-awesome/css/font-awesome.css",
+        "../node_modules/fullcalendar/dist/fullcalendar.css",
+        "../node_modules/angular2-toaster/lib/toaster.css",
+        "styles/theme/app-midnight-blue.scss"
+      ],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.js",
+        "../node_modules/moment/min/moment.min.js",
+        "../node_modules/fullcalendar/dist/fullcalendar.js",
+        "../node_modules/chart.js/dist/Chart.js",
+        "scripts/jqvmap/jquery.vmap.js",
+        "scripts/jqvmap/maps/jquery.vmap.world.js",
+        "scripts/jb-editor/editor.js",
+        "scripts/progressButton/classie.js",
+        "scripts/progressButton/modernizr.custom.js",
+        "scripts/progressButton/progressButton.js"
+      ],
+      "environments": {
+        "source": "environments/environment.ts",
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "addons": [],
+  "packages": [],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "scss",
+    "prefixInterfaces": false,
+    "inline": {
+      "style": false,
+      "template": false
+    },
+    "spec": {
+      "class": false,
+      "component": true,
+      "directive": true,
+      "module": false,
+      "pipe": true,
+      "service": true
+    }
+  }
+}

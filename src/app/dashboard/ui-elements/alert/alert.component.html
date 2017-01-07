@@ -1,0 +1,45 @@
+<div class="animate">
+	<div class="card">
+		<div class="card-header card-primary card-inverse">
+			<div class="card-title">
+				Dismissable Alerts
+			</div>
+		</div>
+		<div class="card-block">
+			<alert *ngFor="let alert of alerts;let i = index" [type]="alert.type" dismissible="true" (close)="closeAlert(i)">
+			  	{{ alert?.msg }}
+			</alert>
+
+			<alert dismissOnTimeout="3000">This alert will dismiss in 3s</alert>
+			<form class="form-inline">
+				<div class="form-group">
+					<input [(ngModel)]="msg" class="form-control" name="msg" placeholder="Enter Alert Message">
+				</div>
+				<button type="submit" class="btn btn-secondary" (click)="addAlert()">Add Alert</button>
+			</form>
+		</div>
+	</div>
+	<div class="card">
+		<div class="card-header card-info card-inverse">
+			<div class="card-title">
+				Growl Alerts
+			</div>
+		</div>
+		<div class="card-block">
+			<toaster-container></toaster-container>
+			<p>
+				<button type="button" class="btn btn-secondary" (click)="popToast('default')">Default Toast</button>
+				<button type="button" class="btn btn-success" (click)="popToast('success')">Success Toast</button>
+				<button type="button" class="btn btn-danger" (click)="popToast('error')">Danger Toast</button>
+				<button type="button" class="btn btn-info" (click)="popToast('info')">Info Toast</button>
+				<button type="button" class="btn btn-warning" (click)="popToast('warning')">Warning Toast</button>
+			</p>
+			<form class="form-inline">
+				<div class="form-group">
+					<input [(ngModel)]="toastMessage" class="form-control" name="toastMessage" placeholder="Enter Toast Message">
+				</div>
+				<button type="submit" class="btn btn-secondary" (click)="addToast()">Add Toast</button>
+			</form>
+		</div>
+	</div>
+</div>
