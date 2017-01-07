@@ -32,12 +32,9 @@ export class ProjectConfig extends SeedConfig {
       { src: 'perfect-scrollbar/dist/css/perfect-scrollbar.css', inject: true },
       { src: 'perfect-scrollbar/dist/js/perfect-scrollbar.jquery.js', inject: 'libs' },
       { src: 'chart.js/Chart.js', inject: 'libs' },
-<<<<<<< HEAD
       { src: 'lodash/lodash.min.js', inject: 'libs'},
       // { src: 'angular2-datatable/lib/DataTable.js', inject: true},
       // { src: 'lodash', inject: 'libs' }
-=======
->>>>>>> ed6b5fe27a5c60520242f789ef0d799eb29d5bc5
       // {src: 'jquery/dist/jquery.min.js', inject: 'libs'},
     ];
 
@@ -73,8 +70,7 @@ export class ProjectConfig extends SeedConfig {
         main: 'index.js',
         defaultExtension: 'js'
       }
-    },
-    {
+    },{
        name: 'lodash',
       // Path to the package's bundle
       path: 'node_modules/lodash/',

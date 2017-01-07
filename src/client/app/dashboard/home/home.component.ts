@@ -1,5 +1,4 @@
-/// <reference path="../../../../../node_modules/@types/c3/index.d.ts" />
-/// <reference path="../../../../../node_modules/@types/d3/index.d.ts" />
+declare var c3: any;
 
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
@@ -22,7 +21,7 @@ export class HomeComponent implements OnInit {
 	public mapEmployees: any;
 	public openIssues: any;
 	public closedIssues: any;
-
+	public clasd: number;
 	constructor(private http: Http) {
 	}
 
@@ -39,7 +38,7 @@ export class HomeComponent implements OnInit {
 					this.openIssues = this.data[0].repo.openIssues;
 					this.closedIssues = this.data[0].repo.closedIssues;
 					this.Init(this.mapCustomers.us, this.mapCustomers.fr, this.mapCustomers.se,
-						      this.mapEmployees.us, this.mapEmployees.fr, this.mapEmployees.se);
+						this.mapEmployees.us, this.mapEmployees.fr, this.mapEmployees.se);
 				}, 2000);
 			});
 	}
@@ -115,7 +114,11 @@ export class HomeComponent implements OnInit {
 					label: {
 						text: 'Revenue',
 						position: 'outer-middle'
-					},
+					}
+					// ,
+					// tick: {
+					// 	format: d3.format('$,')
+					// }
 				},
 				y2: {
 					show: true,

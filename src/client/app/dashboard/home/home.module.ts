@@ -4,6 +4,8 @@ import { HomeComponent } from './home.component';
 
 import {TodoModule, StatsModule} from '../../widgets/index';
 
+
+
 @NgModule({
     imports: [CommonModule, StatsModule, TodoModule],
     declarations: [HomeComponent],

@@ -26,9 +26,7 @@
       "node",
       "protractor",
       "systemjs",
-      "angular2-datatable",
-      "c3",
-      "d3"
+      "angular2-datatable"
     ]
   },
   "compileOnSave": false

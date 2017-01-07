@@ -5,10 +5,6 @@ import { RouterModule } from '@angular/router';
 import { HomeModule } from './home/home.module';
 import { TableModule } from './tables/table.module';
 import { FormModule } from './forms/forms.module';
-<<<<<<< HEAD
-import { ChartModule } from './charts/charts.module';
-=======
->>>>>>> ed6b5fe27a5c60520242f789ef0d799eb29d5bc5
 import { InvoiceModule } from './invoice/invoice.module';
 import { ProfileModule } from './profile/profile.module';
 
@@ -24,10 +20,6 @@ import { DashboardComponent } from './dashboard.component';
     	HomeModule,
     	TableModule,
     	FormModule,
-<<<<<<< HEAD
-    	ChartModule,
-=======
->>>>>>> ed6b5fe27a5c60520242f789ef0d799eb29d5bc5
     	InvoiceModule,
     	ProfileModule,
     	TopNavModule,
