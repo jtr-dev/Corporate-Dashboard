@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "angular-cli": {},
   "scripts": {
-    "start": "ng serve --host 0.0.0.0 --port 2020 --live-reload-port 49153",
+    "start": "ng serve --host 0.0.0.0 --port 4444 --live-reload-port 49153",
     "build": "ng build --prod --bh /dist/ && http-server -o",
     "build.iis": "ng build --prod -bh /corporate/",
     "lint": "tslint \"src/**/*.ts\"",

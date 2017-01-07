@@ -16,13 +16,14 @@ npm install
 npm install -g angular-cli@latest
 # watches your files and uses livereload by default
 npm start
-#navigate to localhost:2020 
-# npm run build.docs
+#navigate to localhost:4444 
+# npm run build and serve with http-server
 npm run build
 # prod build
 # prod build to host the application in IIS
 #http://localhost/corporate/
-ng build --prod --bh /corporate/
+npm run build.iis
+#ng build --prod -bh /corporate/
 
 ```
 
