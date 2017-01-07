@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
 
 import * as c3 from 'c3';
+import * as d3 from 'd3';
+
 declare var $:any;
 
 @Component({
@@ -111,10 +113,10 @@ export class HomeComponent implements OnInit {
 						text: 'Revenue',
 						position: 'outer-middle'
 					}
-					// ,
-					// tick: {
-					// 	format: d3.format('$,')
-					// }
+					,
+					tick: {
+						format: d3.format('$,')
+					}
 				},
 				y2: {
 					show: true,
