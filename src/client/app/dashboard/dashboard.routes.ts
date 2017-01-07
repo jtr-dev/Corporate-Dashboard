@@ -4,7 +4,6 @@ import { HomeRoutes } from './home/index';
 import { TableRoutes } from './tables/index';
 import { FormRoutes } from './forms/index';
 import { ChartRoutes } from './charts/index';
-import { MailRoutes } from './mail/index';
 import { InvoiceRoutes } from './invoice/index';
 import { ProfileRoutes } from './profile/index';
 
@@ -19,7 +18,6 @@ export const DashboardRoutes: Route[] = [
 	    	...TableRoutes,
 	    	...FormRoutes,
 	    	...ChartRoutes,
-	    	...MailRoutes,
 	    	...InvoiceRoutes,
 	    	...ProfileRoutes
     	]

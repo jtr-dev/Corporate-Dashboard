@@ -25,7 +25,10 @@
       "jasmine",
       "node",
       "protractor",
-      "systemjs"
+      "systemjs",
+      "angular2-datatable",
+      "c3",
+      "d3"
     ]
   },
   "compileOnSave": false
