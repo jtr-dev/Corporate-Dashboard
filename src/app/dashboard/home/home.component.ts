@@ -4,12 +4,12 @@ import { Http } from '@angular/http';
 import * as c3 from 'c3';
 import * as d3 from 'd3';
 
-declare var $:any;
+declare var $: any;
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+	selector: 'app-home',
+	templateUrl: './home.component.html',
+	styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 	public data: any[];
@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
 	public mapEmployees: any;
 	public openIssues: any;
 	public closedIssues: any;
-	public clasd: number;
 	constructor(private http: Http) {
 	}
 
@@ -28,7 +27,6 @@ export class HomeComponent implements OnInit {
 			.subscribe((data) => {
 				setTimeout(() => {
 					this.data = data.json();
-					console.log(this.data);
 					this.Customers = this.data[0].hourlyCustomers;
 					this.Revenue = this.data[0].hourlyRevenue;
 					this.mapCustomers = this.data[0].demographic.customers;
@@ -37,7 +35,7 @@ export class HomeComponent implements OnInit {
 					this.closedIssues = this.data[0].repo.closedIssues;
 					this.Init(this.mapCustomers.us, this.mapCustomers.fr, this.mapCustomers.se,
 						this.mapEmployees.us, this.mapEmployees.fr, this.mapEmployees.se);
-				}, 2000);
+				}, 2500);
 			});
 	}
 	Init(C_us: number, C_fr: number, C_se: number, E_us: number, E_fr: number, E_se: number): void {
@@ -112,8 +110,7 @@ export class HomeComponent implements OnInit {
 					label: {
 						text: 'Revenue',
 						position: 'outer-middle'
-					}
-					,
+					},
 					tick: {
 						format: d3.format('$,')
 					}
