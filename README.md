@@ -18,6 +18,7 @@ npm install -g angular-cli@latest
 npm start
 #navigate to localhost:4444 
 # npm run build and serve with http-server
+npm install -g http-server
 npm run build
 # prod build
 # prod build to host the application in IIS
