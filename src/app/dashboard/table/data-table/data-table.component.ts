@@ -11,6 +11,8 @@ import { DataService } from '../../../shared/data/index';
 })
 
 export class DataTableComponent implements OnInit {
+    public data: any;
+    public sortBy = 'Submitted Date';
     // data table settings
     public settings: any = {
         columns: {
@@ -23,7 +25,7 @@ export class DataTableComponent implements OnInit {
             Description: {
                 title: 'Description'
             },
-            'Employee ': {
+            Employee: {
                 title: 'Employee'
             },
             'Open/Closed Status': {
@@ -43,9 +45,10 @@ export class DataTableComponent implements OnInit {
 
     // call the function to fetch data from api 
     ngOnInit() {
-        setInterval( () => {
+        this.getTable();
+        setInterval(() => {
             this.getTable();
-        },1500);
+        }, 30000);
     }
 
     getTable() {
@@ -53,6 +56,7 @@ export class DataTableComponent implements OnInit {
             .subscribe(
             names => {
                 this.source.load(names);
+                this.data = names;
             },
             error => this.errorMessage = <any>error
             );
