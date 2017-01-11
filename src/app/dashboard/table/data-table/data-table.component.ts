@@ -29,7 +29,7 @@ export class DataTableComponent implements OnInit {
                 title: 'Employee'
             },
             'Open/Closed Status': {
-                title: 'Open/Closed Status'
+                title: 'Status'
             },
             'Closed Timestamp': {
                 title: 'Closed Timestamp'

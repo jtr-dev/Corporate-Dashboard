@@ -9,6 +9,7 @@ const dashboardRoutes: Route[] = [
 			{ path: 'table', loadChildren: 'app/dashboard/table/table.module' },
 			{ path: 'invoice', loadChildren: 'app/dashboard/invoice/invoice.module' },
 			{ path: 'blank-page', loadChildren: 'app/dashboard/blank-page/blank-page.module' },
+			{ path: 'ui', loadChildren: 'app/dashboard/ui-elements/ui-elements.module' },
 		]
 	}
 ];
