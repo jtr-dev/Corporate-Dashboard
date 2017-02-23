@@ -30,7 +30,7 @@ npm run build.iis
 
 
 ## Project Milestones And Udacity Rubrick
- - [ ] App includes all requirements, including header, menu, and all dashboard views.
+ - [x] App includes all requirements, including header, menu, and all dashboard views.
    - [x] A geospatial view, identifying the number of employees at various company locations.
    - [x] A “key metrics” view, containing components displaying: the number of open issues, a line chart reflecting number of paying  customers over a period of time, and a bar chart reflecting number of reported issues over a period of time.
    - [x] A “data view” of all issues, with an appearance similar to a spreadsheet, that is sortable and filterable.
