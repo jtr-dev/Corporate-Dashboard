@@ -33,14 +33,26 @@
 		margin-left: 0;
 		margin-right: 235px;
 	}
-	#sidebar div.side-widgets {
-		margin-left: 0;
+	#sidebar {
+		div.side-widgets {
+			margin-left: 0;
+		}
+		div.side-menu {
+			ul.nested-dropdown {
+				display: block;
+    			margin-right: -195px;
+    			direction: rtl;
+    			position: absolute;
+    			top: 0px;
+    			right: 240px;
+			}
+		}
 	}
 	.topnav-navbar {
 		.navbar-brand {
 			position: absolute;
 			right: -1rem;
-			padding-right: 65px;
+			padding-right: 50px;
 		}
 		.navbar-right {
 			margin-right: 196px;
